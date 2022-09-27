@@ -54,20 +54,23 @@
             background-color: #F7EDDB;
         }
 
-        #image{
-            margin: -200px;
-            margin-right: -240px;
-            scale: 0.2;
+        #images1{
+            margin-left: 40px;
         }
 
         #sr1{
             scale: 2;
-            margin-left: 600px;
+            margin-left: 700px;
         }
 
         #sr2{
             scale: 2;
-            margin-left: 100px;
+            margin-left: 700px;
+        }
+
+        #div1{
+            text-align: center;
+            margin-right: -10px;
         }
 
     </style>
@@ -83,25 +86,25 @@
             </fieldset><br>
 
             <label>First Name</label>
-            <input id="i1"><br><br>
+            <input id="i1" pattern="\S\D[a-zA-Z]*\D\S" required><br><br>
 
             <label>Last Name</label>
-            <input id="i1"><br><br>
+            <input id="i1" pattern="\S\D[a-zA-Z]*\D\S" required><br><br>
 
             <label>Street Address</label>
-            <input id="i1"><br><br>
+            <input id="i1" required><br><br>
 
             <label>Street Address (2)</label>
             <input id="i1" placeholder="(Optional)"><br><br>
 
             <label>City</label>
-            <input id="i1"><br><br>
+            <input id="i1" pattern="^[a-zA-Z]*" required><br><br>
 
             <label>State</label>
-            <input id="i1"><br><br>
+            <input id="i1" pattern="^[a-zA-Z]*" required><br><br>
 
             <label>ZIP/Postal Code</label>
-            <input id="i1" type="number" placeholder="12345"><br><br>
+            <input id="i1" type="number" placeholder="12345" pattern="\d{5}" required><br><br>
 
             <label>Country</label>
             <select name="Country" id="i1" size="3">
@@ -300,7 +303,10 @@
             </select>
 
             <label>Phone</label>
-            <input id="i1" type="tel" placeholder="(123) 456-7890"><br><br>
+            <input id="i1" type="tel" placeholder="123-456-7890" pattern="\d{3}-\d{3}-\d{4}" required><br><br>
+        
+            <label>Email Address</label>
+            <input id="i1" type="email" placeholder="you@email.com" pattern="\w+(-*)+(@+)\w+(.+)\w" required><br><br>
         </fieldset><br>
 
         <fieldset id="main">
@@ -313,24 +319,26 @@
             <input id="cc" type="radio" name="card" value="Visa">
             <input id="cc" type="radio" name="card" value="Discover"><br><br><br>
                 
-            <input type="image" id="image" src="/images/american_express-v2.png" alt="American Express Card">
-            <input type="image" id="image" src="/images/mastercard-v2.png" alt="Mastercard Card">
-            <input type="image" id="image" src="/images/visa-v2.png" alt="Visa Card">
-            <input type="image" id="image" src="/images/discover-v2.png" alt="Discover Card">
+            <img id="images1" src="/images/american_express-v2.png" alt="American Express Card" width="195px">
+            <img id="images1" src="/images/mastercard-v2.png" alt="Mastercard Card" width="195px">
+            <img id="images1" src="/images/visa-v2.png" alt="Visa Card" width="195px">
+            <img id="images1" src="/images/discover-v2.png" alt="Discover Card" width="195px">
             <br><br><br><br>
 
             <label>Credit Card Number</label>
-            <input id="i1" type="number" placeholder="1111-2222-3333-4444"><br><br>
+            <input id="i1" type="number" placeholder="1111-2222-3333-4444" pattern="\d{4}(-*)\d{4}(-*)\d{4}(-*)\d{4}" required><br><br>
 
             <label>Expiration Date</label>
-            <input id="i1" type="date"><br><br>
+            <input id="i1" type="date" required><br><br>
 
             <label>CSC</label>
-            <input id="i1" type="number" placeholder="123"><br><br>
+            <input id="i1" type="number" placeholder="123" pattern="^\d{3}" required><br><br>
         </fieldset><br><br>
 
-        <input id="sr1" value="Submit Form" type="submit">
-        <input id="sr2" value="Cancel Form" type="reset">
+        <div id="div1">
+            <button type="submit">Submit</button>
+            <button type="reset">Cancel</button>
+        </div>
     </form><br><br>
 </body>
 </html>
